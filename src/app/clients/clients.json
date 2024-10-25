@@ -1,0 +1,94 @@
+{
+  "clients": [
+    {
+      "id": "671aa39c8456171fd0b3d5a8",
+      "name": {
+        "first": "Amparo",
+        "last": "Crona"
+      },
+      "email": "Ericka_Sporer-Erdman62@gmail.com",
+      "createdAt": "Sun Oct 22 2023 16:59:37 GMT-0400"
+    },
+    {
+      "id": "671aa39c8456171fd0b3d5a9",
+      "name": {
+        "first": "Reese",
+        "last": "Dickens"
+      },
+      "email": "Lenore_Dickens@gmail.com",
+      "createdAt": "Thu Dec 07 2023 23:01:55 GMT-0500"
+    },
+    {
+      "id": "671aa39c8456171fd0b3d5aa",
+      "name": {
+        "first": "Virgil",
+        "last": "Dietrich"
+      },
+      "email": "Obie.Stoltenberg35@gmail.com",
+      "createdAt": "Thu Apr 14 2022 04:18:20 GMT-0400"
+    },
+    {
+      "id": "671aa39c8456171fd0b3d5ab",
+      "name": {
+        "first": "Vern",
+        "last": "Jakubowski"
+      },
+      "email": "Guillermo18@gmail.com",
+      "createdAt": "Fri Mar 29 2024 17:42:32 GMT-0400"
+    },
+    {
+      "id": "671aa39c8456171fd0b3d5ac",
+      "name": {
+        "first": "Brendon",
+        "last": "Nader"
+      },
+      "email": "Florencio_Balistreri46@gmail.com",
+      "createdAt": "Mon Sep 16 2024 02:57:47 GMT-0400"
+    },
+    {
+      "id": "671aa39c8456171fd0b3d5ad",
+      "name": {
+        "first": "Brock",
+        "last": "Schiller"
+      },
+      "email": "Norberto45@gmail.com",
+      "createdAt": "Mon Jan 15 2024 19:12:32 GMT-0500"
+    },
+    {
+      "id": "671aa39c8456171fd0b3d5ae",
+      "name": {
+        "first": "Carmine",
+        "last": "Metz"
+      },
+      "email": "Daphne_Bartell@gmail.com",
+      "createdAt": "Mon Dec 19 2022 19:38:59 GMT-0500"
+    },
+    {
+      "id": "671aa39c8456171fd0b3d5af",
+      "name": {
+        "first": "Jamal",
+        "last": "Swift"
+      },
+      "email": "Arturo_Howell-Hagenes38@gmail.com",
+      "createdAt": "Tue Aug 29 2023 08:21:05 GMT-0400"
+    },
+    {
+      "id": "671aa39c8456171fd0b3d5b0",
+      "name": {
+        "first": "Alize",
+        "last": "Gleichner"
+      },
+      "email": "Giovanna_Farrell99@gmail.com",
+      "createdAt": "Sun Sep 17 2023 21:00:28 GMT-0400"
+    },
+    {
+      "id": "671aa39c8456171fd0b3d5b1",
+      "name": {
+        "first": "Adan",
+        "last": "Russel"
+      },
+      "email": "Gene45@gmail.com",
+      "createdAt": "Sun Dec 11 2022 00:38:40 GMT-0500"
+    }
+  ]
+}
