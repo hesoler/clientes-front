@@ -32,7 +32,8 @@
             "style": "kebab-case"
           }
         ],
-        "dot-notation": "off"
+        "dot-notation": "off",
+        "no-useless-constructor": "off"
       }
     },
     {
