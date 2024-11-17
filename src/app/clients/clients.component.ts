@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common'
 import { HttpClientModule } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
-import { type Clients } from './client'
 import { ClientService } from './client.service'
+import { Client } from './client'
 
 @Component({
   selector: 'app-clientes',
@@ -11,7 +11,7 @@ import { ClientService } from './client.service'
   templateUrl: './clients.component.html'
 })
 export class ClientsComponent implements OnInit {
-  clientes!: Clients
+  clientes!: Client[]
   private readonly clienteService: ClientService
 
   constructor (clienteService: ClientService) {

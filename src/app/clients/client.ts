@@ -10,5 +10,3 @@ export interface Client {
   email: string;
   createdAt: string;
 }
-
-export type Clients = Client[]
