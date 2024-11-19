@@ -3,10 +3,10 @@
 //   last: string;
 // }
 
-export interface Client {
-  id: string;
-  name: string;
-  lastname: string;
-  email: string;
-  createdAt: string;
+export class Client {
+  id!: string
+  name!: string
+  lastName!: string
+  email!: string
+  createdAt!: string
 }

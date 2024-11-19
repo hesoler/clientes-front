@@ -5,11 +5,11 @@ import { Component } from '@angular/core'
   selector: 'app-directiva',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './directiva.component.html'
+  templateUrl: './directive.component.html'
 })
-export class DirectivaComponent {
-  listaCurso: string[] = ['TypeScript', 'JavaScript', 'Jave SE', 'C#', 'PHP']
-  habilitar: boolean = true
+export class DirectiveComponent {
+  listCourse: string[] = ['TypeScript', 'JavaScript', 'Java SE', 'C#', 'PHP']
+  enable: boolean = true
 
   constructor () {}
 }
