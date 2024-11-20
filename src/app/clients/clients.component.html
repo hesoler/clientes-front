@@ -13,19 +13,23 @@
       <thead>
         <tr>
           <th>Id</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
+          <th>Name</th>
+          <th>Last name</th>
           <th>Email</th>
-          <th>Fecha</th>
+          <th>Created at</th>
+          <th>Edit</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let cliente of clientes">
-          <td>{{cliente.id}}</td>
-          <td>{{cliente.name}}</td>
-          <td>{{cliente.lastName}}</td>
-          <td>{{cliente.email}}</td>
-          <td>{{cliente.createdAt}}</td>
+        <tr *ngFor="let client of clients">
+          <td>{{client.id}}</td>
+          <td>{{client.name}}</td>
+          <td>{{client.lastName}}</td>
+          <td>{{client.email}}</td>
+          <td>{{client.createdAt}}</td>
+          <td>
+            <button type="button" name="button" [routerLink]="['form', client.id]" class="btn btn-primary">Edit</button>
+          </td>
         </tr>
       </tbody>
     </table>

@@ -1,35 +1,30 @@
-<div class="card bg-dark text-white">
+<div class="card bg-dark text-white app-form">
   <div class="card-header">{{ title }}</div>
   <div class="card-body">
 
-    <form (ngSubmit)="create()">
-      <div class="card-group row">
-        <label for="name" class="col-form-label col-sm-2">Name</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="client.name" id="name" name="name">
-        </div>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="col-form-label">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="client.name" id="name" name="name">
       </div>
 
-      <div class="card-group row">
-        <label for="lastName" class="col-form-label col-sm-2">Last name</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="client.lastName" id="lastName" name="lastName">
-        </div>
+      <div class="mb-3">
+        <label for="lastName" class="col-form-label">Last name</label>
+        <input type="text" class="form-control" [(ngModel)]="client.lastName" id="lastName" name="lastName">
       </div>
 
-      <div class="card-group row">
-        <label for="email" class="col-form-label col-sm-2">Email</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="client.email" id="email" name="email">
-        </div>
+      <div class="mb-3">
+        <label for="email" class="col-form-label">Email</label>
+        <input type="text" class="form-control" [(ngModel)]="client.email" id="email" name="email">
       </div>
 
-      <div class="card-group row">
-        <div class="col-sm-6">
-          <button class="btn btn-primary">
-            Create
-          </button>
-        </div>
+      <div class="card-link row ms-sm-0 me-sm-0 mt-5">
+        <button class="btn btn-primary" (click)="create()" *ngIf="!client.id else elseBlock">
+          Create
+        </button>
+        <ng-template #elseBlock>
+          <button class="btn btn-primary" (click)="update()">Edit</button>
+        </ng-template>
       </div>
     </form>
 

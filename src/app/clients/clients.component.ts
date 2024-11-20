@@ -12,16 +12,16 @@ import { RouterLink } from '@angular/router'
   templateUrl: './clients.component.html'
 })
 export class ClientsComponent implements OnInit {
-  clientes!: Client[]
-  private readonly clienteService: ClientService
+  clients!: Client[]
+  private readonly clientService: ClientService
 
   constructor (clienteService: ClientService) {
-    this.clienteService = clienteService
+    this.clientService = clienteService
   }
 
   ngOnInit () {
-    this.clienteService.getClients().subscribe(
-      clientes => { this.clientes = clientes }
+    this.clientService.getClients().subscribe(
+      clients => { this.clients = clients }
     )
   }
 }

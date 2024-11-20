@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-footer',
@@ -8,8 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
     CommonModule
   ],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './footer.component.css'
 })
 export class FooterComponent {
   autor: any = { nombre: 'Héctor', apellido: 'Soler' }

@@ -9,5 +9,6 @@ export const routes: Routes = [
   { path: 'directives', component: DirectiveComponent },
   { path: 'clients', component: ClientsComponent },
   { path: 'clients/form', component: FormComponent },
+  { path: 'clients/form/:id', component: FormComponent },
   { path: '**', title: '404 Not Found Clientes App', component: PageNotFoundComponent }
 ]

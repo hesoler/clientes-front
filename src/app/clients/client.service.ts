@@ -11,14 +11,22 @@ export class ClientService {
 
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
 
-  constructor (private readonly http: HttpClient) {}
+  constructor (private readonly http: HttpClient) { }
 
   getClients (): Observable<Client[]> {
     return this.http.get<Client[]>(this.endPoint)
     // return of(clients)
   }
 
-  create (client:Client): Observable<Client> {
+  create (client: Client): Observable<Client> {
     return this.http.post<Client>(this.endPoint, client, { headers: this.httpHeaders })
+  }
+
+  getClient (id: number): Observable<Client> {
+    return this.http.get<Client>(`${this.endPoint}/${id}`)
+  }
+
+  update (client: Client): Observable<Client> {
+    return this.http.put<Client>(`${this.endPoint}/${client.id}`, client, { headers: this.httpHeaders })
   }
 }
