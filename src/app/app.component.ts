@@ -12,7 +12,7 @@ import { HeaderComponent } from './header/header.component'
 })
 
 export class AppComponent {
-  title = 'Welcome to Angular'
+  title = 'Clientes App'
 
   curso: string = 'Curso Spring 5 con Angular'
   profesor: string = 'Héctor Soler'

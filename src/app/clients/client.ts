@@ -4,7 +4,7 @@
 // }
 
 export class Client {
-  id!: string
+  id!: number
   name!: string
   lastName!: string
   email!: string

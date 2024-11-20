@@ -1,8 +1,8 @@
 <div class="card border-primary mb-3">
-  <div class="card-header">Clientes</div>
+  <div class="card-header">Clients</div>
 
   <div class="card-body text-primary">
-    <h5 class="card-title">Listado de Clientes</h5>
+    <h5 class="card-title">Clients list</h5>
 
     <div>
       <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['form']"
@@ -17,7 +17,6 @@
           <th>Last name</th>
           <th>Email</th>
           <th>Created at</th>
-          <th>Edit</th>
         </tr>
       </thead>
       <tbody>
@@ -28,7 +27,10 @@
           <td>{{client.email}}</td>
           <td>{{client.createdAt}}</td>
           <td>
-            <button type="button" name="button" [routerLink]="['form', client.id]" class="btn btn-primary">Edit</button>
+            <button type="button" name="button" [routerLink]="['form', client.id]" class="btn btn-primary btn-sm">Edit</button>
+          </td>
+          <td>
+            <button type="button" name="button" (click)="delete(client)" class="btn btn-danger btn-sm">Delete</button>
           </td>
         </tr>
       </tbody>
