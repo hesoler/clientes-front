@@ -1,0 +1,8 @@
+:root {
+  position: relative;
+  min-height: 100vh;
+}
+
+.container {
+  padding-bottom: 4.5rem;
+}
