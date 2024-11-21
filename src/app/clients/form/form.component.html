@@ -1,5 +1,9 @@
 <div class="card bg-dark text-white app-form">
-  <div class="card-header">{{ title }}</div>
+  <div class="card-header" *ngIf="!client.id; else headerEdit">Create client</div>
+  <ng-template #headerEdit>
+    <div class="card-header">Edit client</div>
+  </ng-template>
+
   <div class="card-body">
 
     <form>

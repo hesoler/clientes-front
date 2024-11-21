@@ -14,7 +14,6 @@ import { ClientService } from './../client.service'
 })
 export class FormComponent implements OnInit {
   client: Client = new Client()
-  title: string = 'Create client'
 
   constructor (
     private readonly clientService: ClientService,
@@ -53,8 +52,6 @@ export class FormComponent implements OnInit {
   }
 
   update (): void {
-    this.title = 'Update client'
-
     this.clientService.update(this.client)
       .subscribe((client) => {
         this.router.navigate(['/clients'])
