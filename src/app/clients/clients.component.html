@@ -4,12 +4,16 @@
   <div class="card-body text-primary">
     <h5 class="card-title">Clients list</h5>
 
-    <div>
+    <div class="my-2">
       <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['form']"
         routerLinkActive="router-link-active">Create client</button>
     </div>
 
-    <table class="table table-bordered table-striped">
+    <div *ngIf="!clients || clients.length === 0" class="alert alert-info">
+      No records found in database.
+    </div>
+
+    <table class="table table-bordered table-striped" *ngIf="clients.length > 0">
       <thead>
         <tr>
           <th>Id</th>
@@ -27,7 +31,8 @@
           <td>{{client.email}}</td>
           <td>{{client.createdAt}}</td>
           <td>
-            <button type="button" name="button" [routerLink]="['form', client.id]" class="btn btn-primary btn-sm">Edit</button>
+            <button type="button" name="button" [routerLink]="['form', client.id]"
+              class="btn btn-primary btn-sm">Edit</button>
           </td>
           <td>
             <button type="button" name="button" (click)="delete(client)" class="btn btn-danger btn-sm">Delete</button>

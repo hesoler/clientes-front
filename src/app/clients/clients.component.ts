@@ -13,7 +13,7 @@ import { ClientService } from './client.service'
   templateUrl: './clients.component.html'
 })
 export class ClientsComponent implements OnInit {
-  clients!: Client[]
+  clients: Client[] = []
   private readonly clientService: ClientService
 
   constructor (clienteService: ClientService) {
@@ -35,7 +35,7 @@ export class ClientsComponent implements OnInit {
         if (result.isConfirmed) {
           this.clientService.delete(client.id).subscribe(
             (response) => {
-              this.clients = this.clients.filter(cl => cl.id !== client.id)
+              this.clients = this.clients?.filter(cl => cl.id !== client.id)
 
               Swal.fire({
                 title: 'Deleted!',
