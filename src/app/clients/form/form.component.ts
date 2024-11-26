@@ -45,7 +45,7 @@ export class FormComponent implements OnInit {
             text: `Client ${client.name} created successfully!`,
             icon: 'success',
             showConfirmButton: false,
-            timer: 2000
+            timer: 1500
           })
         }
       )
@@ -60,7 +60,7 @@ export class FormComponent implements OnInit {
           text: `Client ${client.name} updated successfully!`,
           icon: 'success',
           showConfirmButton: false,
-          timer: 2000
+          timer: 1500
         })
       })
   }
