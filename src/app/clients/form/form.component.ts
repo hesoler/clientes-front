@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router'
 import Swal from 'sweetalert2'
 import { Client } from '../client'
 import { ClientService } from './../client.service'
+
 @Component({
   selector: 'app-form',
   standalone: true,
@@ -12,6 +13,7 @@ import { ClientService } from './../client.service'
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })
+
 export class FormComponent implements OnInit {
   client: Client = new Client()
 
@@ -35,29 +37,29 @@ export class FormComponent implements OnInit {
     })
   }
 
-  public create (): void {
+  create (): void {
     this.clientService.create(this.client)
-      .subscribe(
-        (client) => {
-          this.router.navigate(['/clients'])
-          Swal.fire({
-            title: 'New client',
-            text: `Client ${client.name} created successfully!`,
-            icon: 'success',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        }
+      .subscribe((response: any) => {
+        this.router.navigate(['/clients'])
+        Swal.fire({
+          title: 'New client',
+          text: `Client ${response.client.name} created successfully!`,
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
       )
   }
 
   update (): void {
     this.clientService.update(this.client)
-      .subscribe((client) => {
+      .subscribe((response: any) => {
+        console.log(response)
         this.router.navigate(['/clients'])
         Swal.fire({
           title: 'Edit client',
-          text: `Client ${client.name} updated successfully!`,
+          text: `Client ${response.client.name} updated successfully!`,
           icon: 'success',
           showConfirmButton: false,
           timer: 1500
