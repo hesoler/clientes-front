@@ -16,6 +16,7 @@ import { ClientService } from './../client.service'
 
 export class FormComponent implements OnInit {
   client: Client = new Client()
+  buttonSubmitLabel: string = 'Create'
 
   constructor (
     private readonly clientService: ClientService,
@@ -30,6 +31,7 @@ export class FormComponent implements OnInit {
       const id = params['id']
 
       if (id) {
+        this.buttonSubmitLabel = 'Edit'
         this.clientService.getClient(id).subscribe((client) => {
           this.client = client
         })
@@ -65,6 +67,11 @@ export class FormComponent implements OnInit {
           timer: 1500
         })
       })
+  }
+
+  handleSubmit ():void {
+    if (this.client.id) this.update()
+    else this.create()
   }
 
   ngOnInit () {

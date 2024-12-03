@@ -6,29 +6,50 @@
 
   <div class="card-body">
 
-    <form>
+    <form #clientForm="ngForm">
       <div class="mb-3">
         <label for="name" class="col-form-label">Name</label>
-        <input type="text" class="form-control" [(ngModel)]="client.name" id="name" name="name">
+        <input type="text" class="form-control" [(ngModel)]="client.name" id="name" name="name" required minlength="3"
+          #name="ngModel">
+        <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.errors && name.errors['required']">
+            Name is required.
+          </div>
+          <div *ngIf="name.errors && name.errors['minlength']">
+            Name must have at least tree characters.
+          </div>
+        </div>
       </div>
 
       <div class="mb-3">
         <label for="lastName" class="col-form-label">Last name</label>
-        <input type="text" class="form-control" [(ngModel)]="client.lastName" id="lastName" name="lastName">
+        <input type="text" class="form-control" [(ngModel)]="client.lastName" id="lastName" name="lastName" required
+          #lastName="ngModel">
+        <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+          <div *ngIf="lastName.errors && lastName.errors['required']">
+            Last name is required.
+          </div>
+        </div>
       </div>
 
       <div class="mb-3">
         <label for="email" class="col-form-label">Email</label>
-        <input type="text" class="form-control" [(ngModel)]="client.email" id="email" name="email">
+        <input type="email" class="form-control" [(ngModel)]="client.email" id="email" name="email" required email
+          #email="ngModel">
+        <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors && email.errors['required']">
+            Email is required.
+          </div>
+          <div *ngIf="email.errors && email.errors['email']">
+            Email must have a valid format.
+          </div>
+        </div>
       </div>
 
       <div class="card-link row ms-sm-0 me-sm-0 mt-5">
-        <button class="btn btn-primary" (click)="create()" *ngIf="!client.id else elseBlock">
-          Create
+        <button class="btn btn-primary" (click)="handleSubmit()" [disabled]="!clientForm.form.valid">
+          {{ buttonSubmitLabel }}
         </button>
-        <ng-template #elseBlock>
-          <button class="btn btn-primary" (click)="update()">Edit</button>
-        </ng-template>
       </div>
     </form>
 
