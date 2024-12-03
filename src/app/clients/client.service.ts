@@ -23,6 +23,9 @@ export class ClientService {
   create (client: Client): Observable<object> {
     return this.http.post<Client>(this.endPoint, client, { headers: this.httpHeaders }).pipe(
       catchError(response => {
+        if (response.status === 400) {
+          return throwError(() => response)
+        }
         Swal.fire({
           title: 'Error',
           text: `${response.error.message}`,
@@ -54,6 +57,9 @@ export class ClientService {
   update (client: Client): Observable<Client> {
     return this.http.put<Client>(`${this.endPoint}/${client.id}`, client, { headers: this.httpHeaders }).pipe(
       catchError(response => {
+        if (response.status === 400) {
+          return throwError(() => response)
+        }
         Swal.fire({
           title: 'Error',
           text: `${response.error.message}`,

@@ -18,6 +18,8 @@ export class FormComponent implements OnInit {
   client: Client = new Client()
   buttonSubmitLabel: string = 'Create'
 
+  errors: string[] = []
+
   constructor (
     private readonly clientService: ClientService,
     private readonly router: Router,
@@ -41,35 +43,46 @@ export class FormComponent implements OnInit {
 
   create (): void {
     this.clientService.create(this.client)
-      .subscribe((response: any) => {
-        this.router.navigate(['/clients'])
-        Swal.fire({
-          title: 'New client',
-          text: `Client ${response.client.name} created successfully!`,
-          icon: 'success',
-          showConfirmButton: false,
-          timer: 1500
-        })
-      }
-      )
+      .subscribe({
+        next: (response: any) => {
+          this.router.navigate(['/clients'])
+          Swal.fire({
+            title: 'New client',
+            text: `Client ${response.client.name} created successfully!`,
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        },
+        error: (err) => {
+          this.errors = err.error.errors as string[]
+          console.error(`Code: ${err.status}`, err.error)
+        }
+      })
   }
 
   update (): void {
     this.clientService.update(this.client)
-      .subscribe((response: any) => {
-        console.log(response)
-        this.router.navigate(['/clients'])
-        Swal.fire({
-          title: 'Edit client',
-          text: `Client ${response.client.name} updated successfully!`,
-          icon: 'success',
-          showConfirmButton: false,
-          timer: 1500
-        })
+      .subscribe({
+        next: (response: any) => {
+          console.log(response)
+          this.router.navigate(['/clients'])
+          Swal.fire({
+            title: 'Edit client',
+            text: `Client ${response.client.name} updated successfully!`,
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        },
+        error: (err) => {
+          this.errors = err.error.errors as string[]
+          console.error(`Code: ${err.status}`, err.error)
+        }
       })
   }
 
-  handleSubmit ():void {
+  handleSubmit (): void {
     if (this.client.id) this.update()
     else this.create()
   }
